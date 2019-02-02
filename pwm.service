@@ -1,0 +1,12 @@
+[Unit]
+Description=PWM Fan Control
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/pwm-fan-control
+ExecStart=/home/pi/pwm-fan-control/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
