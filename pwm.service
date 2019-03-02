@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/home/pi/pwm-fan-control
-ExecStart=/home/pi/pwm-fan-control/app.py
+ExecStart=/home/pi/pwm-fan-control/app.py 7081
 Restart=always
 
 [Install]

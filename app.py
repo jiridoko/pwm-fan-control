@@ -2,6 +2,7 @@
 import serial
 import configparser
 import time
+import sys
 from flask import Flask
 from flask import request
 
@@ -36,4 +37,8 @@ def speed_control():
     return ('', 204)
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8080, host="0.0.0.0")
+    if len(sys.argv) >= 2:
+        app.run(debug=False, port=int(sys.argv[1]), host="0.0.0.0")
+    else:
+        print ("port not specified")
+        print (sys.argv[0]+" <port>")
